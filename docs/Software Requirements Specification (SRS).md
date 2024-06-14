@@ -1,13 +1,13 @@
 # Software Requirements Specification (SRS) Document
 
 ## 1. Introduction
-### 1.1 Purpose
-The purpose of this document is to outline the requirements for the development of an Energy Usage Analysis System. This system will allow users to upload their energy usage data from Central Maine Power (CMP), visualize monthly usage differences, calculate costs, and generate reports for better energy management.
+### 1.1 Purpose 
+The purpose of this document is to outline the requirements for the development of an Energy Usage Analysis System. This system will allow users to upload their energy usage data that they request from Central Maine Power (CMP), visualize monthly usage differences, calculate costs, and generate reports for better energy management.
 
 ### 1.2 Scope
 The Energy Usage Analysis System will provide a web-based platform where users can:
 - Authenticate and securely log in to their accounts.
-- Upload energy usage data files provided by Central Maine Power (CMP).
+- Upload energy usage data spreadsheet provided by Central Maine Power (CMP).
 - Parse and analyze the uploaded data to visualize monthly usage differences.
 - Calculate costs based on the usage data.
 - Generate detailed reports summarizing usage patterns and potential cost savings opportunities.
@@ -49,13 +49,13 @@ The Energy Usage Analysis System is a standalone web application that interacts 
 
 ### 2.4 Operating Environment
 - **Web Browser Compatibility**: The system shall be compatible with modern web browsers (Chrome, Firefox, Safari).
-- **Backend Requirements**: Node.js or Python-based server environment with suitable libraries for file handling and data processing.
-- **Database**: MongoDB or PostgreSQL for data storage.
+- **Backend Requirements**: Node.js based server environment with suitable libraries for file handling and data processing.
+- **Database**: Firebase for data storage.
 
 ## 3. System Features
 ### 3.1 Login and Authentication
 - Users shall authenticate using username and password.
-- Passwords shall be securely stored using encryption techniques.
+- Passwords shall be securely stored using firebase.
 
 ### 3.2 Data Upload and Parsing
 - Users shall upload CMP-provided usage data files in specified formats.
@@ -92,9 +92,3 @@ The Energy Usage Analysis System is a standalone web application that interacts 
 - The user interface shall feature responsive design principles, ensuring compatibility across various devices and screen sizes.
 - Visualizations and reports shall be presented in a clear and accessible format.
 
-## 7. Glossary
-- **CMP**: Central Maine Power, the utility company providing energy usage data.
-- **SRS**: Software Requirements Specification, this document outlining system requirements.
-
-## Appendix A: Use Case Diagram
-![Use Case Diagram](Usecase Diagram/Usecase Diagram.png)
