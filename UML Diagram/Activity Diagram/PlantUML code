@@ -1,0 +1,21 @@
+@startuml
+
+|Main Flow|
+start
+:User Login;
+if (Login Successful?) then (yes)
+  :Upload Usage Data;
+  :Parse Data;
+  if (Data Valid?) then (yes)
+    :Visualize Data;
+    :Generate Reports;
+  else (no)
+    :Display Error Message;
+  endif
+else (no)
+  :Display Login Error;
+endif
+stop
+
+
+@enduml
