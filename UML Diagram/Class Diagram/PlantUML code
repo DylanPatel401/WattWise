@@ -1,0 +1,51 @@
+@startuml
+
+class User {
+  - userID: String
+  - name: String
+  - email: String
+  - password: String
+  + register()
+  + login()
+  + uploadSpreadsheet()
+}
+
+class Spreadsheet {
+  - spreadsheetID: String
+  - userID: String
+  - uploadDate: Date
+  - usageData: List<UsageData>
+  + parseData()
+  + getMonthlyUsage()
+  + getMonthlyCost()
+}
+
+class UsageData {
+  - intervalEndDateTime: DateTime
+  - kWhUsage: Double
+}
+
+class Visualization {
+  - visualizationID: String
+  - spreadsheetID: String
+  - type: String
+  - data: Array
+  + generateGraph()
+  + displayGraph()
+}
+
+class CostCalculator {
+  - calculatorID: String
+  - spreadsheetID: String
+  + calculateMonthlyCost()
+  + generateCostReport()
+}
+
+
+
+User "1" -- "*" Spreadsheet: uploads >
+Spreadsheet "1" -- "*" UsageData: contains >
+Spreadsheet "1" -- "*" Visualization: generates >
+Spreadsheet "1" -- "1" CostCalculator: uses >
+
+@enduml
