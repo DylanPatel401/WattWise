@@ -1,0 +1,19 @@
+@startuml
+
+actor User
+participant "Web Browser" as Browser
+participant "Front-end App" as Frontend
+participant "Back-end Server" as Backend
+participant Spreadsheet
+participant UsageData
+
+User -> Browser: Initiate upload
+Browser -> Frontend: Upload request
+Frontend -> Backend: Forward upload request
+Backend -> Backend: Create new Spreadsheet instance
+Backend -> Spreadsheet: Store UsageData
+Backend --> Frontend: Confirmation
+Frontend --> Browser: Confirmation
+Browser --> User: Confirmation
+
+@enduml
