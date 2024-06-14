@@ -1,0 +1,26 @@
+@startuml
+
+left to right direction
+actor User as User
+actor CMPSystem as "Central Maine Power System"
+actor VisualizationSystem as "Visualization System"
+
+rectangle "Energy Usage Analysis System" {
+  usecase (Login) as "User Login"
+  usecase (Upload Data) as "Upload Usage Data"
+  usecase (View Data) as "View Usage Data"
+  usecase (Generate Report) as "Generate Usage Report"
+
+  User --> (Login)
+  User --> (Upload Data)
+  User --> (View Data)
+  User --> (Generate Report)
+
+  (Upload Data) --> VisualizationSystem
+  (View Data) --> VisualizationSystem
+  (Generate Report) --> VisualizationSystem
+
+  User --> CMPSystem: Obtain Usage Data
+}
+
+@enduml
