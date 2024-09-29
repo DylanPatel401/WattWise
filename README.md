@@ -1,2 +1,2 @@
 # WattWise
-A website where you can upload your CMP/electricity data and visualize/analyze it 
+A website where you can upload your CMP/electricity data and it will predict future useage
